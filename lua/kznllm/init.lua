@@ -130,7 +130,7 @@ end
 ---@param opts { stop_dir: Path?, context_dir_id: string? } `stop_dir` - Path to stop traversing directories (default `$HOME`, `context_dir_id` - identifier that this function will scan for (default `.kzn`)
 ---@return Path context_dir directory path
 function M.find_context_directory(opts)
-  local stop_dir = opts and opts.stop_dir or Path:new(vim.fn.expand '~')
+  local stop_dir = opts and opts.stop_dir or Path:new(vim.fn.expand '/')
   local context_dir_id = opts and opts.context_dir_id or '.kzn'
   local context_dir = Path:new(vim.fn.getcwd())
 
